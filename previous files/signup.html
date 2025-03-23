@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url("image/loginlogo.jpeg");
+        background-position: center;
+        background-size: cover;
+        display:transparent;
+    }
+    .container{
+        justify-content: center;
+        margin: 60px 500px;
+        width:400px;
+        height:400px;
+      
+       
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
+        overflow: hidden;
+    }
+    .form{
+        margin: 50px 118px;
+        
+        gap:5px;
+    }
+    h1{
+        margin:10px 118px;
+        color:white;
+    }
+    .btn{
+     margin: 26px 2px;
+    padding: 3px 58px;
+    border-radius: 10px;
+
+    }
+    .btn:hover{
+        background-color: rgb(0, 148, 206);
+        cursor: pointer;
+    }
+    .user{
+        padding:5px;
+        color:white;
+      
+    }
+    .pass{
+        padding:5px;
+        color:white;
+      
+    }
+    .search{
+    border:2px solid black;
+        border-radius: 5px;
+    }
+    #message{
+        color: white;
+    }
+</style>
+<body>
+    <form action="/signup" method="post">
+        <div class="container">
+            <h1>sign in page</h1>
+        <div class="form">
+                <div class="user">
+                <label >Username/Email ID:</label>
+                <input type="text" placeholder="Email ID" class="search" name="username">
+            </div>
+            <br>
+            <div class="pass">
+                <label>Password-</label>
+                <input type="password" id="password" placeholder="password" class="search" name="password" >
+            </div>
+            <br>
+            <div class="pass">
+                <label>confirmation-</label>
+                <input type="password" id="Confirmpassword" placeholder="confirm password" class="search" name="ConfirmPassword" >
+            </div>
+            <p id="message">demo</p>
+            <button onclick="checkpassword()" class="btn">SUBMIT</button>
+           
+        </div>
+        </div>
+    </form>
+<script>
+   
+   function checkpassword(){
+    let password=document.getElementById("password").value;
+    let confirmpassword=document.getElementById("Confirmpassword").value;
+    console.log(password,confirmpassword);
+    let message=document.getElementById("message");
+    if(password.length!=0){
+    if(password==confirmpassword){
+        console.log("yes");
+        message.textContent="matched";
+        message.style.background="black";
+    }
+    else{
+        console.log("no");
+        message.textContent="something wrong";
+        message.style.background="black";
+    }
+}
+else{
+    alert("");
+}
+}
+</script>
+</body>
+</html>

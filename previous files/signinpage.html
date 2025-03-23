@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+</head>
+<body>
+     <h1>
+        this is home page
+    </h1>
+    <p>Lorem ipsum dolor sit
+        amet consectetur adipisicing elit.
+         Quasi, sapiente!</p>
+         <button>click me</button> 
+         <div class="form-container">
+            <h2>login</h2>
+            <form action="/login" method="post">
+                <div class="form-group">
+                     <input type="text" id="name" name="username">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" >
+               </div>
+               <button type="submit" class="submit-btn">login</button>
+            </form>
+            <p>no acct<a href="/signup">signup</a></p>
+        </div>
+</body>
+</html>  -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+<style>
+     body{
+        background: url('image/loginlogo.jpeg');
+        
+        background-position: center;
+        background-size: cover;
+        display:transparent;
+    } 
+    .container{
+        justify-content: center;
+        margin: 60px 450px;
+        width:400px;
+        height:400px;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
+       
+       
+    }
+    .form{
+        margin: 50px 118px;
+        
+        gap:5px;
+    }
+    h3{
+        margin: 0px 120px;
+    }
+    .user{
+        padding:5px;
+       
+    }
+    .pass{
+        padding:5px;
+        margin:0px 00px;
+        padding:7px 5px;
+       
+        
+    }
+    .btn{
+        margin: 16px 3px;
+    padding: 3px 60px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: transparent;
+
+    }
+    .btn:hover{
+        background-color: rgba(185, 251, 253, 0.986);
+        cursor: pointer;
+    }
+    h1{
+        margin: 0px 120px;
+    }
+    .search{
+        border-radius: 10px;
+        padding:7px 5px;
+        border: none;
+        background: transparent;
+        border: 1px solid white;
+    }
+    h6{
+        margin: 14px 13px;
+        width: 48px;
+        background-color: aqua;
+    }
+    .extra{
+        display:flex;
+    }
+    h3{
+        margin: 10px -30px;
+        display: inline;
+        position:fixed;
+        color: #fbfcc4;
+        
+    }
+    h3 a{
+        color:#fbfcc4;
+    }
+    
+   
+
+</style>
+<body>
+    <div class="main">
+    <form  method="post" action="/logi">
+
+    <div class="container">
+        <h1>login form</h1>
+        <div class="form">
+            <div class="user">
+            <label >Username</label>
+            <input type="text" placeholder="username" class="search" name="username">
+        </div>
+        <br>
+        <div class="pass">
+            <label>Password</label>
+            <input type="password" placeholder="password" class="search" name="password">
+        </div>
+        <button  type="submit" id="btn" class="btn"><a href="http://127.0.0.1:5501/home.html"> SUBMIT</a></button>
+        <div class="extra">
+            <h3>Don't have an account?<a href="http://localhost:8085/signup">Signup</a></h3>
+           
+        </div>
+       
+    </div>
+</div>
+</form>
+</div>
+<script>
+
+</script>
+</body>
+</html>
