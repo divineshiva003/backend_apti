@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 const connect = mongoose.connect(`mongodb+srv://raishivamin2k3:6rDJtLwpAYCEHaCg@cluster0.fwd0z.mongodb.net/testDB`, {
     useNewUrlParser: true,
@@ -75,12 +75,13 @@ app.post("/signup",async(req,res)=>{
     }
     const existuser=await collection.findOne({name:data.name});
     if(existuser){
-       res.redirect('http://127.0.0.1:5502/existuser.html');
+    //    res.redirect('http://127.0.0.1:3000/existuser.html');
+    res.redirect("/existuser");
     }
     else{
     const userdata=await collection.insertMany(data);
     console.log(userdata);
-    res.redirect('http://localhost:8085/');
+    res.redirect('/success');
     }
 })
 
@@ -88,13 +89,14 @@ app.post("/login",async(req,res)=>{
     let check=await collection.findOne({name:req.body.username});
     try{
         if(check.password===req.body.password){
-            res.redirect("http://127.0.0.1:5502/index.html");
-            
+            // res.redirect("http://127.0.0.1:5500/pages/success.html");
+            res.redirect("/success");
             console.log(check);
             console.log(req.body.password);
         }
         else{
-            res.redirect('http://127.0.0.1:5502/loginprompt.html');
+            // res.redirect("http://127.0.0.1:5500/pages/error.html");
+            res.redirect("/error");
         }
     }
     catch(err){
@@ -112,6 +114,12 @@ app.get("/error", (req,res)=>{
     res.sendFile(__dirname + "/pages/error.html");
 })
 
+app.get("/existuser", (req,res)=>{
+    res.sendFile(__dirname + "/pages/existuser.html");
+})
+
 app.listen(port,()=>{
     console.log(`server is running on port ${port}`);
 })
+
+// aptigeeks.vercel.app
