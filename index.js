@@ -11,8 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 const port = 3000;
-
-const connect = mongoose.connect(`mongodb+srv://raishivamin2k3:6rDJtLwpAYCEHaCg@cluster0.fwd0z.mongodb.net/testDB`, {
+const username = process.env.MONGODB_USERNAME;
+const password = process.env.MONGODB_PASSWORD;
+const connect = mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.fwd0z.mongodb.net/testDB`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
