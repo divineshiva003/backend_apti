@@ -91,7 +91,7 @@ app.post("/login",async(req,res)=>{
     try{
         if(check.password===req.body.password){
             // res.redirect("http://127.0.0.1:5500/pages/success.html");
-            res.redirect("/success");
+            res.redirect("https://aptigeeks.vercel.app/home.html");
             console.log(check);
             console.log(req.body.password);
         }
